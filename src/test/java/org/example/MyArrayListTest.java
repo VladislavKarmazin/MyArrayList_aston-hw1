@@ -17,11 +17,11 @@ class MyArrayListTest {
 
     @Test
     void testAddString() {
-        MyArrayList<String> myArrayList = new MyArrayList<>();
+        MyArrayList<String> myArrayList = new MyArrayList<>(); // лучше тестировать на одном дженерике и вынести лист в поле чтобы каждый раз его не инициализировать
 
         assertTrue(myArrayList.add("123"));
         assertEquals(1, myArrayList.size());
-        assertEquals("123",myArrayList.get(0));
+        assertEquals("123",myArrayList.get(0)); // несколько ассертов в assertAll
     }
 
     @Test

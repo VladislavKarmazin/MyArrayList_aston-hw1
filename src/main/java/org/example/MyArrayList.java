@@ -14,7 +14,8 @@ public class MyArrayList<E extends Comparable<E>> implements MyArrayList_Interfa
     /**
      * Начальная емкость по умолчанию.
      */
-    private final static int defaultCapacity = 10;
+    private final static int DEFAULT_CAPACITY = 10; // аппер кейс положен по конвенции
+    public static final String MSG = "Отрицательная емкость";
 
     /**
      * Текущая емкость.
@@ -31,7 +32,7 @@ public class MyArrayList<E extends Comparable<E>> implements MyArrayList_Interfa
      */
     public MyArrayList() {
         this.size = 0;
-        this.array = new Object[defaultCapacity];
+        this.array = new Object[DEFAULT_CAPACITY];
     }
 
     /**
@@ -41,7 +42,7 @@ public class MyArrayList<E extends Comparable<E>> implements MyArrayList_Interfa
      */
     public MyArrayList(int capacity) {
         if (capacity < 0) {
-            throw new IllegalArgumentException("Отрицательная емкость");
+            throw new IllegalArgumentException(MSG);// строки всегда в статические константы
         }
         this.size = 0;
         this.array = new Object[capacity];
